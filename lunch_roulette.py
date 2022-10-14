@@ -15,11 +15,11 @@ def start ():
     print("Please keep in mind with the fast choice user \ndata will not be saved.")
     start_input = input("Now you can either enter 'slow' to access previous \nuser data or 'fast' to skip the custom process \nand just get to lunch!\n")
 
-    if start_input == 'slow':
+    if start_input == "slow":
         os.system('CLS')
         user_verify()
 
-    elif start_input == 'fast':
+    elif start_input == "fast":
         os.system('CLS')
         lunch_roulette_quick()
     
@@ -65,14 +65,15 @@ def welcome_back():
     print(error_prompt)
     r_input = input()
 
-    if r_input == 'reset':
+    if r_input == "reset":
         os.system('CLS')
         reset_verify()
-    elif r_input == 'continue':
+
+    elif r_input == "continue":
         os.system('CLS')
         user_run()
     
-    elif r_input == 'back':
+    elif r_input == "back":
         os.system('CLS')
         user_verify()
     
@@ -89,7 +90,7 @@ def fresh_run():
     print(error_prompt)
     #Insert initialpool.txt here and overwrite custompool.txt with initialpool.txt
     begin = input()
-    
+
     if begin == "engage":
         os.system('CLS')
         lunch_roulette_quick()
@@ -111,11 +112,11 @@ def user_run():
     print(error_prompt)
     u_input = input()
 
-    if u_input == 'engage':
+    if u_input == "engage":
         os.system('CLS')
         lunch_roulette_quick()
 
-    if u_input == 'back':
+    elif u_input == "back":
         os.system('CLS')
         welcome_back()
 
@@ -136,7 +137,7 @@ def reset_verify():
         os.system('CLS')
         fresh_run()
         
-    if reset == "no":
+    elif reset == "no":
         os.system('CLS')
         user_run()
 
