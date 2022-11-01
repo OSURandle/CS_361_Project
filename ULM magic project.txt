@@ -1,0 +1,22 @@
+title 
+
+
+participant magic_client
+
+
+participant magic_server
+
+
+
+activate magic_server
+magic_client->magic_server:magic_rng_card()
+
+
+
+
+activate magic_client
+space
+magic_client<--magic_server:card_name
+space
+destroy magic_client
+destroy magic_server
