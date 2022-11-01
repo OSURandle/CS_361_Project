@@ -20,8 +20,8 @@ def magic_rng_card():
         #  Get the reply.
         message = socket.recv()
         card_name = message.decode('utf-8')
-        print(card_name)
-        magic_rng_card()
+        return(card_name)
+        
     elif start == 'end':
         print ("Ok thanks for playing!")
 
