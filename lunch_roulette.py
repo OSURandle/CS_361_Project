@@ -1,6 +1,8 @@
 import os
 import random
 import time
+import requests
+
 #Main screen window
 error_prompt = "If you feel you have made an error, enter 'back' to go to the \nprevious prompt."
 mulligan_error = "Oops! You can only use mulligan three times!"
@@ -93,6 +95,7 @@ def fresh_run():
 
     if begin == "engage":
         os.system('CLS')
+        get_new()
         lunch_roulette_quick()
         #lunch_roulette()
 
@@ -106,6 +109,16 @@ def fresh_run():
         time.sleep(1)
         os.system('CLS')
         fresh_run()
+    
+def get_new():
+    
+    response = requests.get("https://ghostly-coffin-04418.herokuapp.com/")
+    print(response.text)
+    add_new()
+def add_new():
+    requests.post('https://ghostly-coffin-04418.herokuapp.com/add', data = {"name":input()})
+    response = requests.get("https://ghostly-coffin-04418.herokuapp.com/")
+    print(response.text)
 
 def user_run():
     print("Now for the fun part, enter 'engage' to begin random selection of your potential lunch option from \nyour previous choice pool!")
@@ -165,4 +178,4 @@ def lunch_roulette_quick():
 #def sorry():
 
 os.system('CLS')
-start()
+get_new()
