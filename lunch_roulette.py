@@ -310,7 +310,6 @@ def reset():
 
 # Sets the initial set of restaurants
 def initial():
-    
     requests.post('https://web-production-16ee.up.railway.app/add', data = {"name":"Burger King\n"})
     requests.post('https://web-production-16ee.up.railway.app/add', data = {"name": "Taco Bell\n"})
     requests.post('https://web-production-16ee.up.railway.app/add', data = {"name": "Hardees\n"})
